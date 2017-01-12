@@ -1,0 +1,164 @@
+#N canvas 488 172 557 449 10;
+#X obj 160 94 *~;
+#X obj 250 94 *~;
+#X obj 70 94 *~;
+#X obj 345 55 inlet~;
+#X obj 0 45 inlet~;
+#X obj 70 72 tabread~ \$0-f1;
+#X obj 160 72 tabread~ \$0-f2;
+#X obj 250 72 tabread~ \$0-f3;
+#X obj 70 45 inlet~;
+#X obj 0 170 outlet~;
+#N canvas 486 170 639 175 Formant_Arrays 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-f1 100 float 3;
+#A 0 570 543 516 489 462 435 408 381 354 327 300 314 328 342 356 370
+384 398 412 426 440 469 498 527 556 585 614 643 672 701 730 709 688
+667 646 625 604 583 562 541 520 517 514 511 508 505 502 499 496 493
+490 507 524 541 558 575 592 609 626 643 660 647 634 621 608 595 582
+569 556 543 530 516 502 488 474 460 446 432 418 404 390 378 366 354
+342 330 318 306 294 282 270 300 330 360 390 420 450 480 510 540;
+#X coords 0 800 99 200 200 140 1 0 0;
+#X restore 4 1 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-f2 100 float 3;
+#A 0 840 843 846 849 852 855 858 861 864 867 870 885 900 915 930 945
+960 975 990 1005 1020 1027 1034 1041 1048 1055 1062 1069 1076 1083
+1090 1100 1110 1120 1130 1140 1150 1160 1170 1180 1190 1206 1222 1238
+1254 1270 1286 1302 1318 1334 1350 1387 1424 1461 1498 1535 1572 1609
+1646 1683 1720 1732 1744 1756 1768 1780 1792 1804 1816 1828 1840 1855
+1870 1885 1900 1915 1930 1945 1960 1975 1990 2020 2050 2080 2110 2140
+2170 2200 2230 2260 2290 2145 2000 1855 1710 1565 1420 1275 1130 985
+;
+#X coords 0 3000 99 800 200 140 1 0 0;
+#X restore 214 1 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-f3 100 float 3;
+#A 0 2410 2393 2376 2359 2342 2325 2308 2291 2274 2257 2240 2240 2240
+2240 2240 2240 2240 2240 2240 2240 2240 2260 2280 2300 2320 2340 2360
+2380 2400 2420 2440 2435 2430 2425 2420 2415 2410 2405 2400 2395 2390
+2320 2250 2180 2110 2040 1970 1900 1830 1760 1690 1762 1834 1906 1978
+2050 2122 2194 2266 2338 2410 2417 2424 2431 2438 2445 2452 2459 2466
+2473 2480 2487 2494 2501 2508 2515 2522 2529 2536 2543 2550 2596 2642
+2688 2734 2780 2826 2872 2918 2964 3010 2950 2890 2830 2770 2710 2650
+2590 2530 2470;
+#X coords 0 3500 99 1500 200 140 1 0 0;
+#X restore 424 1 graph;
+#X restore 430 395 pd Formant_Arrays;
+#N canvas 763 410 313 191 Write_Formants 0;
+#X obj 60 79 i;
+#X obj 90 79 + 1;
+#X obj 60 37 until;
+#X obj 0 96 sel 99;
+#X msg 77 57 0;
+#X obj 60 123 textfile;
+#X msg 114 106 rewind;
+#X obj 60 101 t b f;
+#X obj 60 15 t b b b b;
+#X msg 161 106 read ./formant3.txt cr;
+#X obj 60 145 tabwrite \$0-f3;
+#X msg 60 -7 bang;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 0 0 7 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;
+#X connect 4 0 0 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 7 1 10 1;
+#X connect 8 0 2 0;
+#X connect 8 1 4 0;
+#X connect 8 2 6 0;
+#X connect 8 3 9 0;
+#X connect 9 0 5 0;
+#X connect 11 0 8 0;
+#X restore 430 415 pd Write_Formants;
+#X text 0 -5 formants~;
+#X text 10 10 formant filter;
+#X obj 395 60 sig~ 1;
+#X obj 50 170 outlet~;
+#X text 0 195 inlets;
+#X text 0 25 0) Input;
+#X text 70 25 1) Formant;
+#X text 60 195 0) signal - the incoming signalto be filtered.;
+#X text 345 35 2) Formant Stretch;
+#X obj 445 77 inlet~;
+#X obj 490 116 inlet;
+#X text 490 96 4) Q;
+#X text 445 57 3) Formant Shift;
+#X text 59 255 3) signal - a sum in the formants frequency.;
+#X text 59 275 4) float - change the "Q" \, or filter sharpness.;
+#X text 380 215 0 - /ow/;
+#X text 380 225 10 - /oo/;
+#X text 380 235 20 - /u/;
+#X text 380 245 30 - /a/;
+#X text 380 255 40 - /uh/;
+#X text 380 265 50 - /er/;
+#X text 380 275 60 - /ae/;
+#X text 380 285 70 - /e/;
+#X text 380 295 80 - /i/;
+#X text 380 305 90 - /iy/;
+#X text 0 405 http://archive.cnx.org/contents/7bc35dbe-d552-4d28-87a4-92857b461014@2/formant-vowel-synthesis
+;
+#X text 0 385 Formants from:;
+#X text 0 305 outlets;
+#X text 60 305 0) signal - the filtered signal (real part).;
+#X text 60 325 1) signal - the filtered signal (imaginary part).;
+#X obj 298 55 sig~ 0;
+#X text 60 215 1) signal - the formant from 0 to 100;
+#X text 59 235 2) signal - formant stretch or size \, from -1 to n.
+;
+#X text 380 195 FORMANTS:;
+#X obj 390 116 f \$1;
+#X obj 390 94 loadbang;
+#X text 0 355 arguments;
+#X text 60 355 1) float - set the "Q" \, 20 by default.;
+#X obj 0 133 vcf~ 20;
+#X obj 50 133 vcf~ 20;
+#X obj 100 133 vcf~ 20;
+#X obj 345 77 lop~ 500;
+#X obj 160 116 lop~ 50;
+#X obj 250 116 lop~ 50;
+#X obj 70 116 lop~ 50;
+#X connect 0 0 54 0;
+#X connect 1 0 55 0;
+#X connect 2 0 56 0;
+#X connect 3 0 53 0;
+#X connect 4 0 50 0;
+#X connect 4 0 51 0;
+#X connect 4 0 52 0;
+#X connect 5 0 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 14 0 53 0;
+#X connect 21 0 1 0;
+#X connect 21 0 0 0;
+#X connect 21 0 2 0;
+#X connect 22 0 50 2;
+#X connect 22 0 51 2;
+#X connect 22 0 52 2;
+#X connect 42 0 7 0;
+#X connect 42 0 6 0;
+#X connect 42 0 5 0;
+#X connect 46 0 50 2;
+#X connect 46 0 51 2;
+#X connect 46 0 52 2;
+#X connect 47 0 46 0;
+#X connect 50 0 9 0;
+#X connect 50 1 15 0;
+#X connect 51 0 9 0;
+#X connect 51 1 15 0;
+#X connect 52 0 9 0;
+#X connect 52 1 15 0;
+#X connect 53 0 0 1;
+#X connect 53 0 1 1;
+#X connect 53 0 2 1;
+#X connect 54 0 51 1;
+#X connect 55 0 52 1;
+#X connect 56 0 50 1;
