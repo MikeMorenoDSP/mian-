@@ -1,97 +1,101 @@
 #N canvas 330 23 1058 563 10;
 #X obj 108 116 hsl 128 14 0 127 0 1 \$0-sndstp \$0-rcvstp STEPS -2
--6 0 12 -262144 -1 -1 5900 1;
+-6 0 12 -262144 -1 -1 6400 1;
 #X obj 238 116 nbx 2 14 1 32 0 0 \$0-sndstpnmb \$0-rcvstpnmb empty
-0 -8 0 12 -262144 -1 -1 15 256;
+0 -8 0 12 -262144 -1 -1 16 256;
 #X obj 108 146 hsl 128 14 0 127 0 0 \$0-sndbts \$0-rcvbts BEATS -2
--6 0 12 -262144 -1 -1 5000 1;
-#X obj 238 146 nbx 2 14 0 15 0 0 \$0-sndbtsnmb \$0-rcvbtsnmb empty
-0 -8 0 12 -262144 -1 -1 6 256;
+-6 0 12 -262144 -1 -1 0 1;
+#X obj 238 146 nbx 2 14 0 16 0 0 \$0-sndbtsnmb \$0-rcvbtsnmb empty
+0 -8 0 12 -262144 -1 -1 0 256;
 #X obj 108 176 hsl 128 14 0 127 0 0 \$0-sndrte \$0-rcvrte ROTATE -2
 -6 0 12 -262144 -1 -1 0 1;
-#X obj 238 176 nbx 2 14 0 15 0 0 \$0-sndrtenmb \$0-rcvrtenmb empty
+#X obj 238 176 nbx 2 14 0 16 0 0 \$0-sndrtenmb \$0-rcvrtenmb empty
 0 -8 0 12 -262144 -1 -1 0 256;
 #X obj 108 206 hsl 128 14 0 127 0 1 \$0-sndvel \$0-rcvvel VELOCITY
--2 -6 0 12 -262144 -1 -1 9100 1;
+-2 -6 0 12 -262144 -1 -1 10000 1;
 #X obj 238 206 nbx 3 14 0 127 0 0 \$0-sndvelnmb \$0-rcvvelnmb empty
-0 -8 0 12 -262144 -1 -1 91 256;
+0 -8 0 12 -262144 -1 -1 100 256;
 #X obj 108 456 hsl 128 14 0 127 0 0 \$0-sndacc \$0-rcvacc ACCENTS -2
 -6 0 12 -262144 -1 -1 0 1;
-#X obj 238 456 nbx 2 14 0 6 0 0 \$0-sndaccnmb \$0-rcvaccnmb empty 0
+#X obj 238 456 nbx 2 14 0 0 0 0 \$0-sndaccnmb \$0-rcvaccnmb empty 0
 -8 0 12 -262144 -1 -1 0 256;
-#X obj 238 486 nbx 2 14 0 6 0 0 \$0-sndartnmb \$0-rcvartnmb empty 0
+#X obj 238 486 nbx 2 14 0 0 0 0 \$0-sndartnmb \$0-rcvartnmb empty 0
 -8 0 12 -262144 -1 -1 0 256;
 #X obj 108 516 hsl 128 14 0 127 0 1 \$0-sndavl \$0-rcvavl ACCENT VELOCITY
--2 -6 0 12 -262144 -1 -1 0 1;
+-2 -6 0 12 -262144 -1 -1 12700 1;
 #X obj 238 516 nbx 3 14 0 127 0 0 \$0-sndavlnmb \$0-rcvavlnmb empty
-0 -8 0 12 -262144 -1 -1 0 256;
+0 -8 0 12 -262144 -1 -1 127 256;
 #X obj 143 426 hradio 14 1 1 9 \$0-sndspd \$0-rcvspd SPEED 1/1 0 -6
 0 12 -262144 -1 -1 -4;
 #N canvas 4 23 450 300 \$0-circle 0;
-#X obj 180 95 r 1010-tgl0;
-#X obj 210 102 r 1010-tgl1;
-#X obj 235 120 r 1010-tgl2;
-#X obj 251 147 r 1010-tgl3;
-#X obj 254 177 r 1010-tgl4;
-#X obj 244 207 r 1010-tgl5;
-#X obj 224 230 r 1010-tgl6;
-#X obj 195 243 r 1010-tgl7;
-#X obj 165 243 r 1010-tgl8;
-#X obj 136 230 r 1010-tgl9;
-#X obj 116 207 r 1010-tgl10;
-#X obj 106 177 r 1010-tgl11;
-#X obj 109 147 r 1010-tgl12;
-#X obj 125 120 r 1010-tgl13;
-#X obj 150 102 r 1010-tgl14;
-#X obj 180 105 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 180 95 r 1030-tgl0;
+#X obj 208 101 r 1030-tgl1;
+#X obj 233 117 r 1030-tgl2;
+#X obj 249 142 r 1030-tgl3;
+#X obj 255 170 r 1030-tgl4;
+#X obj 249 198 r 1030-tgl5;
+#X obj 233 223 r 1030-tgl6;
+#X obj 208 239 r 1030-tgl7;
+#X obj 180 245 r 1030-tgl8;
+#X obj 152 239 r 1030-tgl9;
+#X obj 127 223 r 1030-tgl10;
+#X obj 111 198 r 1030-tgl11;
+#X obj 105 170 r 1030-tgl12;
+#X obj 111 142 r 1030-tgl13;
+#X obj 127 117 r 1030-tgl14;
+#X obj 152 101 r 1030-tgl15;
+#X obj 180 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 210 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 208 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 235 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 233 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 251 157 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 249 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 254 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 255 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 244 217 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 249 208 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 224 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 233 233 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 195 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 208 249 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 165 253 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 180 255 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 136 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 152 249 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 116 217 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 127 233 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 106 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 111 208 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 109 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 105 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 125 130 tgl 15 0 empty empty empty 17 7 0 10 -128992 -128992
+#X obj 111 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 150 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 127 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X connect 0 0 15 0;
-#X connect 1 0 16 0;
-#X connect 2 0 17 0;
-#X connect 3 0 18 0;
-#X connect 4 0 19 0;
-#X connect 5 0 20 0;
-#X connect 6 0 21 0;
-#X connect 7 0 22 0;
-#X connect 8 0 23 0;
-#X connect 9 0 24 0;
-#X connect 10 0 25 0;
-#X connect 11 0 26 0;
-#X connect 12 0 27 0;
-#X connect 13 0 28 0;
-#X connect 14 0 29 0;
+#X obj 152 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+-1 0 1;
+#X connect 0 0 16 0;
+#X connect 1 0 17 0;
+#X connect 2 0 18 0;
+#X connect 3 0 19 0;
+#X connect 4 0 20 0;
+#X connect 5 0 21 0;
+#X connect 6 0 22 0;
+#X connect 7 0 23 0;
+#X connect 8 0 24 0;
+#X connect 9 0 25 0;
+#X connect 10 0 26 0;
+#X connect 11 0 27 0;
+#X connect 12 0 28 0;
+#X connect 13 0 29 0;
+#X connect 14 0 30 0;
+#X connect 15 0 31 0;
 #X coords 0 -1 1 1 175 175 2 100 100;
 #X restore 105 230 pd \$0-circle;
 #X obj 105 412 tgl 28 1 \$0-sndtgl \$0-rcvtgl ON 6 15 0 14 -1 -1 -262144
-11 1;
+1 1;
 #X obj 108 486 hsl 128 14 0 127 0 0 \$0-sndart \$0-rcvart ACCENT ROTATE
 -2 -6 0 12 -262144 -1 -1 0 1;
 #N canvas 895 23 604 551 \$0-tabwrite 0;
