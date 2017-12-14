@@ -26,24 +26,24 @@
 #X obj 238 516 nbx 3 14 0 127 0 0 \$0-sndavlnmb \$0-rcvavlnmb empty
 0 -8 0 12 -262144 -1 -1 127 256;
 #X obj 143 426 hradio 14 1 1 9 \$0-sndspd \$0-rcvspd SPEED 1/1 0 -6
-0 12 -262144 -1 -1 -4;
+0 12 -262144 -1 -1 0;
 #N canvas 4 23 450 300 \$0-circle 0;
-#X obj 180 95 r 1030-tgl0;
-#X obj 208 101 r 1030-tgl1;
-#X obj 233 117 r 1030-tgl2;
-#X obj 249 142 r 1030-tgl3;
-#X obj 255 170 r 1030-tgl4;
-#X obj 249 198 r 1030-tgl5;
-#X obj 233 223 r 1030-tgl6;
-#X obj 208 239 r 1030-tgl7;
-#X obj 180 245 r 1030-tgl8;
-#X obj 152 239 r 1030-tgl9;
-#X obj 127 223 r 1030-tgl10;
-#X obj 111 198 r 1030-tgl11;
-#X obj 105 170 r 1030-tgl12;
-#X obj 111 142 r 1030-tgl13;
-#X obj 127 117 r 1030-tgl14;
-#X obj 152 101 r 1030-tgl15;
+#X obj 180 95 r 1041-tgl0;
+#X obj 208 101 r 1041-tgl1;
+#X obj 233 117 r 1041-tgl2;
+#X obj 249 142 r 1041-tgl3;
+#X obj 255 170 r 1041-tgl4;
+#X obj 249 198 r 1041-tgl5;
+#X obj 233 223 r 1041-tgl6;
+#X obj 208 239 r 1041-tgl7;
+#X obj 180 245 r 1041-tgl8;
+#X obj 152 239 r 1041-tgl9;
+#X obj 127 223 r 1041-tgl10;
+#X obj 111 198 r 1041-tgl11;
+#X obj 105 170 r 1041-tgl12;
+#X obj 111 142 r 1041-tgl13;
+#X obj 127 117 r 1041-tgl14;
+#X obj 152 101 r 1041-tgl15;
 #X obj 180 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
 #X obj 208 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
@@ -70,7 +70,7 @@
 -1 0 1;
 #X obj 105 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
-#X obj 111 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
+#X obj 111 152 tgl 15 0 empty empty empty 17 7 0 10 -233017 -233017
 -1 0 1;
 #X obj 127 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -262144
 -1 0 1;
@@ -832,6 +832,7 @@
 #X msg 700 88 stp \$1;
 #X floatatom 700 70 5 0 0 1 STEPS - -, f 5;
 #X text 842 246 PARAMETERS;
+#X obj 440 72 loadbang;
 #X connect 20 0 31 0;
 #X connect 21 0 26 0;
 #X connect 22 0 21 0;
@@ -896,4 +897,5 @@
 #X connect 63 8 72 0;
 #X connect 83 0 63 0;
 #X connect 84 0 83 0;
+#X connect 86 0 49 0;
 #X coords 0 -1 1 1 185 435 2 100 100;
